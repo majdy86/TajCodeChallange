@@ -1,31 +1,39 @@
 package org.assignmentSeera.apiEngine.model.requests;
 
+import org.assignmentSeera.dataProvider.DataManipulationBaseObject;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Guests {
     public List<Object> guest;
 
-    Guests(int x) {
+    Guests() {
         guest = new ArrayList<>();
-        this.guest = numberOfGuests(x);
+        this.guest = numberOfGuests(new DataManipulationBaseObject().getRandomIntegerRange(1, 10));
     }
 
-    List<Object> numberOfGuests(int numOfGuests) {
+    Guests(int numberOfGuestsType) {
+        guest = new ArrayList<>();
+        this.guest = numberOfGuests(numberOfGuestsType);
+    }
+
+    List<Object> numberOfGuests(int numOfGuestsTypes) {
         CHDGuest chdGuest = new CHDGuest();
         ADTGuest adtGuest = new ADTGuest();
 
-        if (numOfGuests < 1) {
+        if (numOfGuestsTypes < 1) {
             this.guest.add(chdGuest);
             this.guest.add(adtGuest);
         } else {
-            while (numOfGuests > 1) {
+            while (numOfGuestsTypes > 1) {
+                adtGuest = new ADTGuest();
+                adtGuest = new ADTGuest();
                 guest.add(chdGuest);
                 guest.add(adtGuest);
-                numOfGuests -= 1;
+                numOfGuestsTypes -= 1;
             }
         }
         return guest;
     }
-
 }

@@ -1,6 +1,7 @@
 package org.assignmentSeera;
 
 
+import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
@@ -15,27 +16,33 @@ import org.junit.jupiter.api.*;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
 
-
+/**
+ * The assignment does not provide comprehensive information about
+ * the API ex(schema, data types accepted, error messages, mandatory fields etc..)
+ * so the test cases implemented accordingly.
+ */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class GetMethodApiTest
-{
+public class GetMethodApiTest {
     static RequestSpecification requestSpec;
     static ResponseSpecification responseSpec;
     final String paramName = "query";
-    String paramValue = "paris";
+    final String paramValue = "paris";
+
     JsonPath jsonPath;
 
     @BeforeAll
-    static void setRequestSpec(){
+    static void setRequestSpec() {
+        String baseURI1 = "https://www.tajawal.ae";
+        String basePath1 = "/api/hotel/ahs/v2/geo-suggest";
         requestSpec = new RequestSpecBuilder().
                 setAccept(ContentType.JSON).
-                setBaseUri("https://www.tajawal.ae").
-                setBasePath("/api/hotel/ahs/v2/geo-suggest").build();
+                setBaseUri(baseURI1).
+                setBasePath(basePath1).build();
 
     }
 
     @BeforeAll
-    static void setResponseSpec(){
+    static void setResponseSpec() {
         responseSpec = new ResponseSpecBuilder().
                 expectStatusCode(200).
                 expectContentType(ContentType.JSON).build();
@@ -45,24 +52,23 @@ public class GetMethodApiTest
 
     @Test
     @Order(1)
-    @DisplayName("Get Hotel API's fields should not be empty")
-    public void hotelFieldsIsNotEmpty()
-    {
+    @DisplayName("Search for hotels with valid data")
+    void hotelFieldsIsNotEmpty() {
         jsonPath =
-        given().
-                spec(requestSpec).
-                param(paramName, paramValue).
-        when().
-                get().
-        then().
-                spec(responseSpec).
-                extract().jsonPath();
+                given().
+                        spec(requestSpec).
+                        param(paramName, paramValue).
+                        when().
+                        get().
+                        then().
+                        spec(responseSpec).
+                        extract().jsonPath();
 
         Hotel[] hotels = jsonPath.getObject("hotels", Hotel[].class);
 
         SoftAssertions softAssertions = new SoftAssertions();
-        for(Hotel hotel: hotels){
-            softAssertions.assertThat(hotel.hotelId).as("hotelId with name:"+ hotel.name).isNotNull();
+        for (Hotel hotel : hotels) {
+            softAssertions.assertThat(hotel.hotelId).as("hotelId with name:" + hotel.name).isNotNull();
             softAssertions.assertThat(hotel.name).as("name with hotel Id:" + hotel.hotelId).isNotEmpty();
             softAssertions.assertThat(hotel.city).as("city with hotel Id:" + hotel.hotelId).isNotEmpty();
             softAssertions.assertThat(hotel.country).as("country with hotel Id:" + hotel.hotelId).isNotEmpty();
@@ -79,25 +85,23 @@ public class GetMethodApiTest
 
     @Test
     @Order(2)
-    @DisplayName("Get Hotel Location")
-    public void getHotelLocation()
-    {
+    @DisplayName("search hotel locations with valid data")
+    void getHotelLocation() {
         jsonPath =
-        given().
-                spec(requestSpec).
-                param(paramName, paramValue).
-        when().
-                get().
-
-        then().
-                spec(responseSpec).
-                extract().jsonPath();
+                given().
+                        spec(requestSpec).
+                        param(paramName, paramValue).
+                        when().
+                        get().
+                        then().
+                        spec(responseSpec).
+                        extract().jsonPath();
 
         Locations[] locations = jsonPath.getObject("locations", Locations[].class);
 
         SoftAssertions softAssertions = new SoftAssertions();
-        for(Locations location: locations){
-            softAssertions.assertThat(location.name).as("location with placeId:"+ location.placeId).isNotNull();
+        for (Locations location : locations) {
+            softAssertions.assertThat(location.name).as("location with placeId:" + location.placeId).isNotNull();
             softAssertions.assertThat(location.placeId).as("placeId with country: " + location.country + " city: " + location.city).isNotEmpty();
             softAssertions.assertThat(location.source).as("source with placeId:" + location.placeId).isNotEmpty();
             softAssertions.assertThat(location.country).as("country with placeId:" + location.placeId).isNotEmpty();
@@ -112,19 +116,16 @@ public class GetMethodApiTest
 
     @Test
     @Order(3)
-    @DisplayName("Call hotel API with empty query param value, i should get empty result")
-    public void emptyQueryParamValue(){
+    @DisplayName("search for hotels and location with an empty city field")
+    void emptyQueryParamValue() {
 
         given().
                 spec(requestSpec).
-                param(paramName,"").
-        when().
+                param(paramName, "").
+                when().
                 get().
-        then().
+                then().
                 spec(responseSpec).
                 assertThat().body("hotels", empty(), "locations", empty());
     }
-
-
-
 }

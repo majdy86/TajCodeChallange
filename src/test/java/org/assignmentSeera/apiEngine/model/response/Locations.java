@@ -2,7 +2,6 @@ package org.assignmentSeera.apiEngine.model.response;
 
 
 public class Locations {
-
     public String name;
     public String placeId;
     public String source;

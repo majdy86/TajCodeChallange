@@ -10,6 +10,4 @@ public class RoomQueryParametersObj {
     public String placeId;
     public List<Object> types;
 
-
-
 }

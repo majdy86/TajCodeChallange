@@ -9,13 +9,21 @@
   <version>1.0-SNAPSHOT</version>
 
   <name>AssignmentSeera</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.example.com</url>
+
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <junit.jupiter.engine>5.7.0</junit.jupiter.engine>
+    <assertj.core>3.18.1</assertj.core>
+    <restAssured>4.3.2</restAssured>
+    <jakson.databind>2.12.0-rc2</jakson.databind>
+
+    <!--FIXME project configuration variables should be implemented here-->
+    <environment>environment_should_be_extracted_from_here</environment>
+    <baseURI>BaseURI_should_be_mvnextracted_from_here</baseURI>
   </properties>
 
   <dependencies>
@@ -23,7 +31,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-engine</artifactId>
-      <version>5.7.0</version>
+      <version>${junit.jupiter.engine}</version>
       <scope>test</scope>
     </dependency>
 
@@ -31,7 +39,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.18.1</version>
+      <version>${assertj.core}</version>
       <scope>test</scope>
     </dependency>
 
@@ -39,7 +47,7 @@
     <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
-      <version>4.3.2</version>
+      <version>${restAssured}</version>
       <scope>test</scope>
     </dependency>
 
@@ -47,7 +55,7 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.12.0-rc2</version>
+      <version>${jakson.databind}</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.json/json -->
@@ -56,8 +64,6 @@
       <artifactId>json</artifactId>
       <version>20200518</version>
     </dependency>
-
-
   </dependencies>
 
   <build>
@@ -85,7 +91,7 @@
               <configurationParameters>
                 junit.jupiter.execution.parallel.enabled = false
                 junit.jupiter.execution.parallel.mode.default = concurrent
-                junit.jupiter.execution.parallel.mode.classes.default = same_thread
+                junit.jupiter.execution.parallel.mode.classes.default = concurrent
               </configurationParameters>
             </properties>
           </configuration>
