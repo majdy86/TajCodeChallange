@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="org.apiTest.ApiTest1" time="6.706" tests="10" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="13"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/majdisuleiman/assignmentSeera/AssignmentSeera/target/test-classes:/Users/majdisuleiman/assignmentSeera/AssignmentSeera/target/classes:/Users/majdisuleiman/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/majdisuleiman/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/rest-assured/4.3.2/rest-assured-4.3.2.jar:/Users/majdisuleiman/.m2/repository/org/codehaus/groovy/groovy/3.0.6/groovy-3.0.6.jar:/Users/majdisuleiman/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.6/groovy-xml-3.0.6.jar:/Users/majdisuleiman/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/majdisuleiman/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/majdisuleiman/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/majdisuleiman/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/majdisuleiman/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/majdisuleiman/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/majdisuleiman/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/json-path/4.3.2/json-path-4.3.2.jar:/Users/majdisuleiman/.m2/repository/org/codehaus/groovy/groovy-json/3.0.6/groovy-json-3.0.6.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/rest-assured-common/4.3.2/rest-assured-common-4.3.2.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/xml-path/4.3.2/xml-path-4.3.2.jar:/Users/majdisuleiman/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/majdisuleiman/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/majdisuleiman/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/majdisuleiman/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Amman"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="13"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/openjdk-13.0.2.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/majdisuleiman/assignmentSeera/AssignmentSeera/target/surefire/surefirebooter6345587449769660817.jar /Users/majdisuleiman/assignmentSeera/AssignmentSeera/target/surefire 2020-11-17T23-35-13_767-jvmRun1 surefire6302234044345717752tmp surefire_03454998770924374215tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|127.0.0.1"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="ApiTest1"/>
+    <property name="surefire.test.class.path" value="/Users/majdisuleiman/assignmentSeera/AssignmentSeera/target/test-classes:/Users/majdisuleiman/assignmentSeera/AssignmentSeera/target/classes:/Users/majdisuleiman/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/majdisuleiman/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/rest-assured/4.3.2/rest-assured-4.3.2.jar:/Users/majdisuleiman/.m2/repository/org/codehaus/groovy/groovy/3.0.6/groovy-3.0.6.jar:/Users/majdisuleiman/.m2/repository/org/codehaus/groovy/groovy-xml/3.0.6/groovy-xml-3.0.6.jar:/Users/majdisuleiman/.m2/repository/org/apache/httpcomponents/httpclient/4.5.3/httpclient-4.5.3.jar:/Users/majdisuleiman/.m2/repository/org/apache/httpcomponents/httpcore/4.4.6/httpcore-4.4.6.jar:/Users/majdisuleiman/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/majdisuleiman/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar:/Users/majdisuleiman/.m2/repository/org/apache/httpcomponents/httpmime/4.5.3/httpmime-4.5.3.jar:/Users/majdisuleiman/.m2/repository/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar:/Users/majdisuleiman/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/json-path/4.3.2/json-path-4.3.2.jar:/Users/majdisuleiman/.m2/repository/org/codehaus/groovy/groovy-json/3.0.6/groovy-json-3.0.6.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/rest-assured-common/4.3.2/rest-assured-common-4.3.2.jar:/Users/majdisuleiman/.m2/repository/io/rest-assured/xml-path/4.3.2/xml-path-4.3.2.jar:/Users/majdisuleiman/.m2/repository/org/apache/commons/commons-lang3/3.11/commons-lang3-3.11.jar:/Users/majdisuleiman/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/2.3.3/jakarta.xml.bind-api-2.3.3.jar:/Users/majdisuleiman/.m2/repository/jakarta/activation/jakarta.activation-api/1.2.2/jakarta.activation-api-1.2.2.jar:/Users/majdisuleiman/.m2/repository/com/sun/xml/bind/jaxb-impl/2.3.3/jaxb-impl-2.3.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/majdisuleiman"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2020-01-14"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/openjdk-13.0.2.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/majdisuleiman/assignmentSeera/AssignmentSeera"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="surefire.real.class.path" value="/Users/majdisuleiman/assignmentSeera/AssignmentSeera/target/surefire/surefirebooter6345587449769660817.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|127.0.0.1"/>
+    <property name="java.runtime.version" value="13.0.2+8"/>
+    <property name="user.name" value="majdisuleiman"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="10.15.7"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/majdisuleiman/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/nb/mlvcj2395655jp_qpcqmk1600000gn/T/"/>
+    <property name="java.version" value="13.0.2"/>
+    <property name="user.dir" value="/Users/majdisuleiman/assignmentSeera/AssignmentSeera"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.library.path" value="/Users/majdisuleiman/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="13.0.2+8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16|127.0.0.1"/>
+    <property name="java.class.version" value="57.0"/>
+  </properties>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills4" classname="org.apiTest.ApiTest1" time="6.706">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=dd3264ddd48d9e19e0d681a07537f3faf1605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb35290000e72c4f2b1000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=z%2Fq0WxHKV%2FceYdCYBH4anwsd%2BUuOVVHPpXcBNva7rqk5EetfNLHeCGi8M%2FGoJ9ljcKXjRvEfY%2Fes6SOLJADwVtdVnrLOJQOB5IT4JVVBNLqugA%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b788ee72c-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills7" classname="org.apiTest.ApiTest1" time="1.701">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=deb9f19accacfaeeebfde88efe10762d51605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb352700000cb99cb1f000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=DTXcrFSE2nnIatagqGrDfdEuuN%2FHWVlwd8A6dX5pmz80hQVyo03CQDt1uKAzczzTH93u0f826MKw4fhO%2BfFVGNQQ4nKwSTXNAEVT7woqePpFLw%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7ee80cb9-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills9" classname="org.apiTest.ApiTest1" time="1.701">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d4ebdf8d60d7896bcae90a6dfb0e48a491605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb352c0000efed2f9e3000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=khGkm4qz6IuVzoUx0HJ%2Fv2W4erD1jCKOKEKHnbci07YyNt%2BzrGs%2BQvZhAhzW797wwYX99QI%2F6hUh%2BUN7NtwGvtrp2%2BT6vfBewKIzHfkWIvy4dg%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7988efed-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills6" classname="org.apiTest.ApiTest1" time="1.701">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=daaf6c48f82b617087a9202680cd601781605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb352c0000e6e8731d9000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=b57X5UIY2C3BOscmpW20hkMWZYJUQj%2FfkP%2BbagQ5H0zdmimcOkYSog%2F0pfWeVIkbObYg01%2FUiDOiaFd0018XS9BqMwHuw0cwrTJvTpreDNqEUw%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7a38e6e8-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills5" classname="org.apiTest.ApiTest1" time="1.701">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d95f9192580c18ac855c72e0704012f821605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb35300000e6dc5f024000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=aWID0RyZOHbgHTStn%2FY4TD9dty4L2ZKIJSii6RldIHl8Qcxp5ZILHROOKB0uLwwm9GnnrrcCqYjqWgNf9KwGHLKuEpjr0WZ8YQtJbuu4d6%2B%2F2A%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7b07e6dc-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills" classname="org.apiTest.ApiTest1" time="6.706">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d79e39db48e65b5147d9255d42f7c141f1605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb35320000f0118c207000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=GQKUIgZq7F39hxW9EKJREek%2BWOAOSUJRdiRlIOVjlRURpONF7QAb17PZtspF%2FFcvP0M2x7%2FwyPNhbJi5IsL9jrmC%2F%2Fn7H1BqhuK3uQZzYlQk9g%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b897bf011-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills2" classname="org.apiTest.ApiTest1" time="6.706">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d28e7dcf8b9f78117481eb56b88f59fd41605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb35280000923a94bf9000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=uZ7lNg0czGnFddg0UgjQWjY3khuHpFPMt6HqMiIG5FpktgvvjNB42Cwfk0sUeQwm%2BNZ4hIaHl9jp6RYGLVC4q1hVe%2BL8bmP5MH1pOphGQlm9Vg%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7c3d923a-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills1" classname="org.apiTest.ApiTest1" time="6.706">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=deb86bca60f75670d5d88ad26d08337d81605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb352a00000ca9cd8f5000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=046BKc3HCGks1LFIisetRqvGIlchNURy2TxhTRzsHfvjJ8%2Bz4K6p%2BpS0fHupOoFVxisKrWtduU6blvQ9RTB23ZvMdw1uBArG44iYrmdAnXX1Sw%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7a4b0ca9-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills3" classname="org.apiTest.ApiTest1" time="6.706">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d1f6aa114886aade073a5a11e32e722f81605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb35270000e6f807113000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=HLzqaCtAmHIHMQATpDr6SXY8T9UlkAVFnBESDKV2navXz%2FunycUucqM1sK2pQi%2Fwfqw5VhnMfphNxOgU%2FcHDPlrJq328P%2FgoAXEHZK6oT3yxWg%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7e6de6f8-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+  <testcase name="requestZipCode9010_checkPlaceNameInResponseBody_expectBeverlyHills8" classname="org.apiTest.ApiTest1" time="1.7">
+    <system-out><![CDATA[HTTP/1.1 200 OK
+Date: Tue, 17 Nov 2020 21:35:15 GMT
+Content-Type: application/json
+Transfer-Encoding: chunked
+Connection: keep-alive
+Set-Cookie: __cfduid=d4ff545aff7cda3c12518f41d815515211605648915; expires=Thu, 17-Dec-20 21:35:15 GMT; path=/; domain=.zippopotam.us; HttpOnly; SameSite=Lax
+X-Cache: hit
+Charset: UTF-8
+Vary: Accept-Encoding
+Access-Control-Allow-Origin: *
+CF-Cache-Status: DYNAMIC
+cf-request-id: 0679bb35280000e6bcd2292000000001
+Report-To: {"endpoints":[{"url":"https:\/\/a.nel.cloudflare.com\/report?s=i8hxWU5%2F3ov7f2LwK76ntiKdZQ8hk63E1eTE64JsqTUuNbaN6pH2mGbMqEHiLdYkXdHrXDYGt3t4yulvcTodbzsJjYmEQCML%2FvmYHvIDKN7nLg%3D%3D"}],"group":"cf-nel","max_age":604800}
+NEL: {"report_to":"cf-nel","max_age":604800}
+Server: cloudflare
+CF-RAY: 5f3c949b7b04e6bc-EWR
+Content-Encoding: gzip
+
+{
+    "post code": "90210",
+    "country": "United States",
+    "country abbreviation": "US",
+    "places": [
+        {
+            "place name": "Beverly Hills",
+            "longitude": "-118.4065",
+            "state": "California",
+            "state abbreviation": "CA",
+            "latitude": "34.0901"
+        }
+    ]
+}
+]]></system-out>
+  </testcase>
+</testsuite>
