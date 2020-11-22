@@ -14,9 +14,6 @@ public class DataManipulationBaseObject {
     Date dateNow = new Date();
     long now = new Date().getTime();
     final ObjectMapper mapper = new ObjectMapper();
-    final String validDateFormat = "dd-MM-YYY";
-    final String InvalidDateFormat = "dd.MM.YYY";
-    final String invalidDate = "DD-MM-YY";
 
     public Date getDatePlusMinusNumOfDays(int numOfDays) {
         long aDay = TimeUnit.DAYS.toMillis(numOfDays);
@@ -33,7 +30,7 @@ public class DataManipulationBaseObject {
 
     public String setDateFormat_RetunDateAsString(Date date, String dateFormatPattern) {
         SimpleDateFormat dateFormat = new SimpleDateFormat(dateFormatPattern);
-        return dateFormat.format(dateNow);
+        return dateFormat.format(date);
     }
 
     public String convertJavaObjectToJsonString(Object object) {
@@ -66,25 +63,25 @@ public class DataManipulationBaseObject {
      */
     public String getValidStringDate(int start, int end) {
         if (start > end || start < 0 || end == 0) {
-            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(1, 10), validDateFormat);
+            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(1, 10), DateFormatProvider.ACCEPTED_FORMAT.getFormat());
         } else {
-            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(start, end), validDateFormat);
+            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(start, end), DateFormatProvider.ACCEPTED_FORMAT.getFormat());
         }
     }
 
     public String getInvalidStringDateFormat(int start, int end) {
         if (start > end || start < 0 || end == 0) {
-            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(1, 10), InvalidDateFormat);
+            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(1, 10), DateFormatProvider.UNACCEPTED_FORMAT.getFormat());
         } else {
-            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(start, end), InvalidDateFormat);
+            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(start, end), DateFormatProvider.UNACCEPTED_FORMAT.getFormat());
         }
     }
 
     public String getInvalidStringDate(int start, int end) {
         if (start > end || start < 0 || end == 0) {
-            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(1, 10), invalidDate);
+            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(1, 10), DateFormatProvider.INVALID_FORMAT.getFormat());
         } else {
-            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(start, end), invalidDate);
+            return setDateFormat_RetunDateAsString(getDatePlusMinusRandomDay(start, end), DateFormatProvider.INVALID_FORMAT.getFormat());
         }
     }
 

@@ -12,7 +12,10 @@ import org.assertj.core.api.SoftAssertions;
 import org.assignmentSeera.apiEngine.model.requests.Room;
 import org.assignmentSeera.apiEngine.model.response.RoomResponseApi;
 import org.assignmentSeera.dataProvider.DataManipulationBaseObject;
+import org.assignmentSeera.dataProvider.DateFormatProvider;
 import org.junit.jupiter.api.*;
+
+import java.util.Date;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -89,6 +92,9 @@ public class PostMethodApiTest {
     @DisplayName("Post guest room search Api with null check in date")
     public void emptyQueryParamValue1() {
         room.dates.checkin = "null";
+        String todayDate = dataManipulationBaseObject.
+                setDateFormat_RetunDateAsString(dataManipulationBaseObject.
+                        getDatePlusMinusNumOfDays(-1), DateFormatProvider.ACCEPTED_FORMAT.getFormat());
 
         given().
                 log().all().
@@ -101,7 +107,7 @@ public class PostMethodApiTest {
                 statusCode(HttpStatus.SC_BAD_REQUEST).
                 body("detail.\"dates.checkin\"[0]", equalTo("The dates.checkin is not a valid date."),
                         "detail.\"dates.checkin\"[1]", equalTo("The dates.checkin does not match the format d-m-Y."),
-                        "detail.\"dates.checkin\"[2]", equalTo("The dates.checkin must be a date after 20-11-2020."));
+                        "detail.\"dates.checkin\"[2]", equalTo("The dates.checkin must be a date after "+ todayDate + "."));
     }
 
     @Test
@@ -160,8 +166,8 @@ public class PostMethodApiTest {
                 then().spec(responseSpec).log().body().
                 assertThat().
                 statusCode(HttpStatus.SC_BAD_REQUEST).
-                body("detail.\"dates.checkin\"[0]", equalTo("The dates.checkin does not match the format d-m-Y."),
-                        "detail.\"dates.checkout\"[0]", equalTo("The dates.checkout does not match the format d-m-Y."));
+                body("detail.\"dates.checkin\"[0]", equalTo("The dates.checkin is not a valid date."),
+                        "detail.\"dates.checkout\"[0]", equalTo("The dates.checkout is not a valid date."));
     }
 
 
@@ -206,7 +212,12 @@ public class PostMethodApiTest {
     @Order(8)
     @DisplayName("Post guest room search api with more than 29 days between the checkin and checkout dates")
     public void aMonthBetweenCheckInAndOut() {
-        room.dates.checkin = dataManipulationBaseObject.getValidStringDate(1, 10);
+        String checkoutAcceptedDate = dataManipulationBaseObject.
+                setDateFormat_RetunDateAsString(dataManipulationBaseObject.
+                        getDatePlusMinusNumOfDays(28), DateFormatProvider.ACCEPTED_FORMAT.getFormat());
+        room.dates.checkin = dataManipulationBaseObject.
+                setDateFormat_RetunDateAsString(dataManipulationBaseObject.
+                        getDatePlusMinusNumOfDays(0), DateFormatProvider.ACCEPTED_FORMAT.getFormat());
         room.dates.checkout = dataManipulationBaseObject.getValidStringDate(70, 80);
 
         given().
@@ -218,6 +229,6 @@ public class PostMethodApiTest {
                 then().spec(responseSpec).
                 assertThat().
                 statusCode(HttpStatus.SC_BAD_REQUEST).log().body().
-                body("detail.dates.checkout[0]", containsStringIgnoringCase("Checkout date must before "));
+                body("detail.dates.checkout[0]", equalTo("Checkout date must before "+ checkoutAcceptedDate));
     }
 }
