@@ -53,7 +53,7 @@ public class GetMethodApiTest {
     @Test
     @Order(1)
     @DisplayName("Search for hotels with valid data")
-    void hotelFieldsIsNotEmpty() {
+    void searchHoteslWithValidData() {
         jsonPath =
                 given().
                         spec(requestSpec).
@@ -86,7 +86,7 @@ public class GetMethodApiTest {
     @Test
     @Order(2)
     @DisplayName("search hotel locations with valid data")
-    void getHotelLocation() {
+    void getHotelsLocationsWithValidData() {
         jsonPath =
                 given().
                         spec(requestSpec).
@@ -117,7 +117,7 @@ public class GetMethodApiTest {
     @Test
     @Order(3)
     @DisplayName("search for hotels and location with an empty city field")
-    void emptyQueryParamValue() {
+    void gethHotelsWithEmptyCity() {
 
         given().
                 spec(requestSpec).

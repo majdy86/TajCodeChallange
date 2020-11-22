@@ -90,7 +90,7 @@ public class PostMethodApiTest {
     @Test
     @Order(2)
     @DisplayName("Post guest room search Api with null check in date")
-    public void emptyQueryParamValue1() {
+    public void searchRoomWithNullChekInDate() {
         room.dates.checkin = "null";
         String todayDate = dataManipulationBaseObject.
                 setDateFormat_RetunDateAsString(dataManipulationBaseObject.
@@ -113,7 +113,7 @@ public class PostMethodApiTest {
     @Test
     @Order(3)
     @DisplayName("Post guest room search Api with null check out date")
-    public void invalidCheckOutQDate() {
+    public void searchRoomWithNullCheckOutDate() {
         room.dates.checkout = "null";
 
         given().
@@ -133,7 +133,7 @@ public class PostMethodApiTest {
     @Test
     @Order(4)
     @DisplayName("Post guest room search Api with invalid dates format")
-    public void invalidDatesFormat() {
+    public void searchRoomWithInvalidDatesFormaForCheckIOutt() {
         room.dates.checkin = dataManipulationBaseObject.getInvalidStringDateFormat(1, 10);
         room.dates.checkout = dataManipulationBaseObject.getInvalidStringDateFormat(11, 20);
 
@@ -153,7 +153,7 @@ public class PostMethodApiTest {
     @Test
     @Order(5)
     @DisplayName("Post guest room search Api with invalid dates")
-    public void invalidDates() {
+    public void searchRoomWithInvalidCheckInOutDates() {
         room.dates.checkin = dataManipulationBaseObject.getInvalidStringDate(1, 10);
         room.dates.checkout = dataManipulationBaseObject.getInvalidStringDate(11, 20);
 
@@ -174,7 +174,7 @@ public class PostMethodApiTest {
     @Test
     @Order(6)
     @DisplayName("Post guest room search Api with invalid destination field")
-    public void invalidDestinationField() {
+    public void searchRoomWithInvalidDestinationField() {
         room.destination = null;
 
         given().
@@ -192,7 +192,7 @@ public class PostMethodApiTest {
     @Test
     @Order(7)
     @DisplayName("Post guest room search api with checkin date before the checkout date")
-    public void checkInDateBeforeCheckOutDate() {
+    public void searchRoomWithCheckInDateBeforeCheckOutDate() {
         room.dates.checkin = dataManipulationBaseObject.getValidStringDate(10, 20);
         room.dates.checkout = dataManipulationBaseObject.getValidStringDate(1, 9);
 
@@ -211,7 +211,7 @@ public class PostMethodApiTest {
     @Test
     @Order(8)
     @DisplayName("Post guest room search api with more than 29 days between the checkin and checkout dates")
-    public void aMonthBetweenCheckInAndOut() {
+    public void searchRoomWithMoreThanMonthBetweenCheckInAndOut() {
         String checkoutAcceptedDate = dataManipulationBaseObject.
                 setDateFormat_RetunDateAsString(dataManipulationBaseObject.
                         getDatePlusMinusNumOfDays(28), DateFormatProvider.ACCEPTED_FORMAT.getFormat());
